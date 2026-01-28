@@ -246,54 +246,6 @@ function handleSubmit(event) {
   }
 }
 
- /* Carousel & lightbox functions */
-function openLightbox(imageSrc) {
-  const lightbox = document.getElementById('galleryLightbox');
-  const lightboxImage = document.getElementById('lightboxImage');
-  if (lightbox && lightboxImage) {
-    lightboxImage.src = imageSrc;
-    lightbox.classList.add('active');
-  }
-}
-
-function closeLightbox() {
-  const lightbox = document.getElementById('galleryLightbox');
-  if (lightbox) {
-    lightbox.classList.remove('active');
-  }
-}
-
-function updateSlidePosition() {
-  const slidesContainer = document.getElementById('gallerySlides');
-  if (slidesContainer) {
-    slidesContainer.style.transform = 'translateX(-' + (currentSlide * 100) + '%)';
-
-    const dots = document.querySelectorAll('.dot');
-    dots.forEach(function (dot, index) {
-      if (index === currentSlide) {
-        dot.classList.add('active');
-      } else {
-        dot.classList.remove('active');
-      }
-    });
-  }
-}
-
-function moveSlide(direction) {
-  const slides = document.querySelectorAll('.gallery-slide');
-  const totalSlides = slides.length;
-
-  if (totalSlides > 0) {
-    currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
-    updateSlidePosition();
-  }
-}
-
-function goToSlide(index) {
-  currentSlide = index;
-  updateSlidePosition();
-}
-
  /* Initialization */
 document.addEventListener('DOMContentLoaded', function () {
 
