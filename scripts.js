@@ -177,10 +177,6 @@ const modalContent = {
   },
 };
 
- /* Global variables*/
-let currentSlide = 0;
-
-
  /* Modal & scroll function */
 // Open modal
 function openModal(type) {
@@ -288,7 +284,7 @@ document.addEventListener('keydown', function (event) {
   }
 });
 
-// 4. Close modal when click outside (Overlay)
+// 2. Close modal when click outside (Overlay)
 window.addEventListener('click', function (event) {
   const modal = document.getElementById('modal');
   if (event.target === modal) {
