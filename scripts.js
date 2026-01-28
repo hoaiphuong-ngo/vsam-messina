@@ -266,23 +266,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // -- Carousel Dots Setup --
-  const slides = document.querySelectorAll('.gallery-slide');
-  const dotsContainer = document.getElementById('carouselDots');
-
-  if (slides.length > 0 && dotsContainer) {
-    dotsContainer.innerHTML = '';
-
-    for (let i = 0; i < slides.length; i++) {
-      const dot = document.createElement('div');
-      dot.className = 'dot';
-      if (i === 0) dot.classList.add('active');
-      dot.onclick = function () { goToSlide(i); };
-
-      dotsContainer.appendChild(dot);
-    }
-  }
-
   // FAQ Accordion Functionality
   document.querySelectorAll('.faq-question').forEach(btn => {
     btn.onclick = function () {
